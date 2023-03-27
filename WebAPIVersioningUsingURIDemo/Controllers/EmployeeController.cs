@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPIVersioningUsingURIDemo.Controllers
+namespace WebAPIVersioningDemoUsingURI.Controllers
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
@@ -24,17 +24,11 @@ namespace WebAPIVersioningUsingURIDemo.Controllers
 
         [HttpGet(Name = "GetEmployees")]
         [ApiVersion("1.0")]
-        public List<Employee> GetEmployeesV1()
-        {
-            return employees;
-        }
+        public List<Employee> GetEmployeesV1() => employees;
 
         [HttpGet(Name = "GetEmployees")]
         [ApiVersion("2.0")]
-        public List<EmployeeV2> GetEmployeesV2()
-        {
-            return employeesV2;
-        }
+        public List<EmployeeV2> GetEmployeesV2() => employeesV2;
     }
 }
 

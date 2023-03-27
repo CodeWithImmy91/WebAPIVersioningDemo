@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WebAPIVersioningUsingURIDemo": {
+    "WebAPIVersioningDemoUsingURI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

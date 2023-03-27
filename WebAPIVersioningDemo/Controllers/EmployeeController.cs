@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPIVersioningUsingQueryStringDemo.Controllers
+namespace WebAPIVersioningDemoUsingQueryString.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,23 +17,19 @@ namespace WebAPIVersioningUsingQueryStringDemo.Controllers
         List<EmployeeV2> employeesV2 = new List<EmployeeV2>()
        {
            new EmployeeV2() { Id = 1, FirstName="Imran", LastName="Sayani",
-               Address= { City="BLR", Country="India", PostCode="560037" , BuildingName= "maangalya suryodaya", State= "karnataka" } },
+               Address= { City="BLR", Country="India", PostCode="560037" , 
+                   BuildingName= "maangalya suryodaya", State= "karnataka" } },
            new EmployeeV2() { Id = 2, FirstName="Sunil", LastName="Sahoo",
-               Address= { City="BLR", Country="India", PostCode="560037" , BuildingName= "maangalya suryodaya", State= "karnataka" } }
+               Address= { City="BLR", Country="India", PostCode="560037" , 
+                   BuildingName= "maangalya suryodaya", State= "karnataka" } }
        };
 
         [HttpGet(Name = "GetEmployees")]
         [ApiVersion("1.0")]
-        public List<Employee> GetEmployeesV1()
-        {
-            return employees;
-        }
+        public List<Employee> GetEmployeesV1() => employees;
 
         [HttpGet(Name = "GetEmployees")]
         [ApiVersion("2.0")]
-        public List<EmployeeV2> GetEmployeesV2()
-        {
-            return employeesV2;
-        }
+        public List<EmployeeV2> GetEmployeesV2() => employeesV2;
     }
 }

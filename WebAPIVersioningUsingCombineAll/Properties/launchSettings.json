@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "WebAPIVersioningUsingCombineAll": {
+    "WebAPIVersioningDemoUsingCombineAll": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

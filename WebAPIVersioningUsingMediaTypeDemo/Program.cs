@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddApiVersioning(x =>
 {
     x.AssumeDefaultVersionWhenUnspecified = true;
@@ -10,6 +11,7 @@ builder.Services.AddApiVersioning(x =>
     x.ReportApiVersions = true;
     x.ApiVersionReader = new MediaTypeApiVersionReader("version");
 });
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
